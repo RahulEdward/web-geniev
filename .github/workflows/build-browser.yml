@@ -1,0 +1,185 @@
+name: Build BrowserGenie Browser
+
+on:
+  push:
+    branches: [ main ]
+    tags:
+      - 'v*'
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    name: Build Windows
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout BrowserGenie
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+        
+    - name: Install Python Dependencies
+      run: |
+        cd packages/browsergenie
+        pip install -r requirements.txt
+        
+    - name: Setup Chromium Depot Tools
+      run: |
+        git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+        echo "${{ github.workspace }}\depot_tools" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+        
+    - name: Fetch Chromium Source
+      run: |
+        mkdir chromium
+        cd chromium
+        fetch --nohooks chromium
+        cd src
+        git checkout $(cat ../../packages/browsergenie/CHROMIUM_VERSION)
+        gclient sync -D
+        
+    - name: Build BrowserGenie
+      run: |
+        cd packages/browsergenie
+        python build/build.py --config build/config/release.windows.yaml --chromium-src ${{ github.workspace }}/chromium/src --build
+        
+    - name: Create Installer
+      run: |
+        # Installer creation logic here
+        echo "Creating Windows installer..."
+        
+    - name: Upload Windows Build
+      uses: actions/upload-artifact@v3
+      with:
+        name: browsergenie-windows
+        path: packages/browsergenie/out/Release/*.exe
+        
+  build-macos:
+    name: Build macOS
+    runs-on: macos-latest
+    
+    steps:
+    - name: Checkout BrowserGenie
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+        
+    - name: Install Python Dependencies
+      run: |
+        cd packages/browsergenie
+        pip install -r requirements.txt
+        
+    - name: Setup Chromium Depot Tools
+      run: |
+        git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+        echo "${{ github.workspace }}/depot_tools" >> $GITHUB_PATH
+        
+    - name: Fetch Chromium Source
+      run: |
+        mkdir chromium
+        cd chromium
+        fetch --nohooks chromium
+        cd src
+        git checkout $(cat ../../packages/browsergenie/CHROMIUM_VERSION)
+        gclient sync -D
+        
+    - name: Build BrowserGenie
+      run: |
+        cd packages/browsergenie
+        python build/build.py --config build/config/release.macos.yaml --chromium-src ${{ github.workspace }}/chromium/src --build
+        
+    - name: Create DMG
+      run: |
+        # DMG creation logic here
+        echo "Creating macOS DMG..."
+        
+    - name: Upload macOS Build
+      uses: actions/upload-artifact@v3
+      with:
+        name: browsergenie-macos
+        path: packages/browsergenie/out/Release/*.dmg
+        
+  build-linux:
+    name: Build Linux
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout BrowserGenie
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+        
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential git python3 python3-pip
+        cd packages/browsergenie
+        pip install -r requirements.txt
+        
+    - name: Setup Chromium Depot Tools
+      run: |
+        git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+        echo "${{ github.workspace }}/depot_tools" >> $GITHUB_PATH
+        
+    - name: Fetch Chromium Source
+      run: |
+        mkdir chromium
+        cd chromium
+        fetch --nohooks chromium
+        cd src
+        git checkout $(cat ../../packages/browsergenie/CHROMIUM_VERSION)
+        gclient sync -D
+        
+    - name: Build BrowserGenie
+      run: |
+        cd packages/browsergenie
+        python build/build.py --config build/config/release.linux.yaml --chromium-src ${{ github.workspace }}/chromium/src --build
+        
+    - name: Create AppImage
+      run: |
+        # AppImage creation logic here
+        echo "Creating Linux AppImage..."
+        
+    - name: Upload Linux Build
+      uses: actions/upload-artifact@v3
+      with:
+        name: browsergenie-linux
+        path: packages/browsergenie/out/Release/*.AppImage
+        
+  create-release:
+    name: Create Release
+    needs: [build-windows, build-macos, build-linux]
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+    
+    steps:
+    - name: Download All Artifacts
+      uses: actions/download-artifact@v3
+      
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          browsergenie-windows/*
+          browsergenie-macos/*
+          browsergenie-linux/*
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

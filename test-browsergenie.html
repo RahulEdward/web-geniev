@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrowserGenie Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #6B46C1; }
+        .status { 
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .success { background: #D1FAE5; color: #065F46; }
+        .error { background: #FEE2E2; color: #991B1B; }
+        .info { background: #DBEAFE; color: #1E40AF; }
+        button {
+            background: #6B46C1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #553C9A; }
+        pre {
+            background: #1F2937;
+            color: #10B981;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .endpoint {
+            background: #F3F4F6;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #6B46C1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧞 BrowserGenie Test Page</h1>
+        
+        <div id="status" class="status info">
+            Checking BrowserGenie status...
+        </div>
+
+        <h2>Available Endpoints</h2>
+        <div class="endpoint">
+            <strong>Health Check:</strong> 
+            <code>http://localhost:3000/health</code>
+            <button onclick="testHealth()">Test</button>
+        </div>
+        
+        <div class="endpoint">
+            <strong>MCP Server:</strong> 
+            <code>http://localhost:3000/mcp</code>
+            <button onclick="testMCP()">Test</button>
+        </div>
+
+        <div class="endpoint">
+            <strong>CDP WebSocket:</strong> 
+            <code>ws://localhost:9222</code>
+            <button onclick="testCDP()">Test</button>
+        </div>
+
+        <h2>Response</h2>
+        <pre id="response">Click a test button to see the response...</pre>
+    </div>
+
+    <script>
+        async function testHealth() {
+            const response = document.getElementById('response');
+            const status = document.getElementById('status');
+            
+            try {
+                const res = await fetch('http://localhost:3000/health');
+                const data = await res.text();
+                
+                response.textContent = `Status: ${res.status}\n\n${data}`;
+                status.className = 'status success';
+                status.textContent = '✅ BrowserGenie is running!';
+            } catch (error) {
+                response.textContent = `Error: ${error.message}`;
+                status.className = 'status error';
+                status.textContent = '❌ Cannot connect to BrowserGenie';
+            }
+        }
+
+        async function testMCP() {
+            const response = document.getElementById('response');
+            
+            try {
+                const res = await fetch('http://localhost:3000/mcp', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        jsonrpc: '2.0',
+                        method: 'tools/list',
+                        params: {},
+                        id: 1
+                    })
+                });
+                
+                const data = await res.json();
+                response.textContent = `Status: ${res.status}\n\n${JSON.stringify(data, null, 2)}`;
+            } catch (error) {
+                response.textContent = `Error: ${error.message}`;
+            }
+        }
+
+        function testCDP() {
+            const response = document.getElementById('response');
+            
+            try {
+                const ws = new WebSocket('ws://localhost:9222');
+                
+                ws.onopen = () => {
+                    response.textContent = '✅ WebSocket connected to CDP!';
+                    ws.close();
+                };
+                
+                ws.onerror = (error) => {
+                    response.textContent = `❌ WebSocket error: ${error}`;
+                };
+            } catch (error) {
+                response.textContent = `Error: ${error.message}`;
+            }
+        }
+
+        // Auto-test health on load
+        window.onload = () => {
+            setTimeout(testHealth, 500);
+        };
+    </script>
+</body>
+</html>

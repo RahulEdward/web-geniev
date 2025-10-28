@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrowserGenie - AI-Powered Browser for the Modern Web</title>
+    <meta name="description" content="BrowserGenie is an AI-powered browser that turns your words into actions. Privacy-first alternative to Chrome, reimagined for the AI era.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-indigo-600">🧞 BrowserGenie</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-gray-700 hover:text-indigo-600">Features</a>
+                    <a href="#download" class="text-gray-700 hover:text-indigo-600">Download</a>
+                    <a href="#about" class="text-gray-700 hover:text-indigo-600">About</a>
+                    <a href="https://github.com/browsergenie-ai/BrowserGenie" class="text-gray-700 hover:text-indigo-600">GitHub</a>
+                </div>
+                <div>
+                    <a href="#download" class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition">
+                        Download Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                Your Browser, <span class="text-indigo-600">Powered by AI</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                BrowserGenie is an AI-powered browser that turns your words into actions. 
+                Just describe your task in plain language — it handles all the clicking, typing, and navigating for you.
+            </p>
+            <p class="text-lg text-gray-500 mb-12">
+                A privacy-first alternative to Chrome, reimagined for the AI era.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#download" class="bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition shadow-lg">
+                    <i class="fab fa-windows mr-2"></i> Download for Windows
+                </a>
+                <a href="#download" class="bg-gray-800 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-900 transition shadow-lg">
+                    <i class="fab fa-apple mr-2"></i> Download for macOS
+                </a>
+                <a href="#download" class="bg-orange-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-600 transition shadow-lg">
+                    <i class="fab fa-linux mr-2"></i> Download for Linux
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">Why BrowserGenie?</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 rounded-lg border border-gray-200 hover:shadow-lg transition">
+                    <div class="text-4xl mb-4">🤖</div>
+                    <h3 class="text-xl font-bold mb-3">AI-Powered Automation</h3>
+                    <p class="text-gray-600">
+                        Describe tasks in plain English. BrowserGenie handles clicking, typing, and navigation automatically.
+                    </p>
+                </div>
+                <div class="p-6 rounded-lg border border-gray-200 hover:shadow-lg transition">
+                    <div class="text-4xl mb-4">🔒</div>
+                    <h3 class="text-xl font-bold mb-3">Privacy First</h3>
+                    <p class="text-gray-600">
+                        Use your own API keys or run local models with Ollama. Your data stays on your computer.
+                    </p>
+                </div>
+                <div class="p-6 rounded-lg border border-gray-200 hover:shadow-lg transition">
+                    <div class="text-4xl mb-4">🏠</div>
+                    <h3 class="text-xl font-bold mb-3">Feels Like Home</h3>
+                    <p class="text-gray-600">
+                        Same familiar interface as Chrome. Works with all your favorite extensions.
+                    </p>
+                </div>
+                <div class="p-6 rounded-lg border border-gray-200 hover:shadow-lg transition">
+                    <div class="text-4xl mb-4">🚀</div>
+                    <h3 class="text-xl font-bold mb-3">Open Source</h3>
+                    <p class="text-gray-600">
+                        100% open source (AGPL-3.0). See exactly what's happening under the hood.
+                    </p>
+                </div>
+                <div class="p-6 rounded-lg border border-gray-200 hover:shadow-lg transition">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold mb-3">Multiple AI Providers</h3>
+                    <p class="text-gray-600">
+                        Works with OpenAI, Anthropic, Google Gemini, or local models via Ollama/LMStudio.
+                    </p>
+                </div>
+                <div class="p-6 rounded-lg border border-gray-200 hover:shadow-lg transition">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-xl font-bold mb-3">MCP Server Support</h3>
+                    <p class="text-gray-600">
+                        Control BrowserGenie from Claude Code or other MCP-compatible tools.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">What Can You Do?</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold mb-4">🛒 Automate Shopping</h3>
+                    <p class="text-gray-600 mb-4">
+                        "Find the best price for iPhone 15 Pro on Amazon and add it to cart"
+                    </p>
+                    <p class="text-sm text-gray-500">
+                        BrowserGenie searches, compares prices, and completes the task for you.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold mb-4">📊 Research & Data</h3>
+                    <p class="text-gray-600 mb-4">
+                        "Scrape all product reviews from this page and save to CSV"
+                    </p>
+                    <p class="text-sm text-gray-500">
+                        Extract data from websites without writing a single line of code.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold mb-4">📝 Form Filling</h3>
+                    <p class="text-gray-600 mb-4">
+                        "Fill out this job application with my resume details"
+                    </p>
+                    <p class="text-sm text-gray-500">
+                        Save hours on repetitive form filling tasks.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold mb-4">💬 Smart Browsing</h3>
+                    <p class="text-gray-600 mb-4">
+                        "Summarize this article and email it to me"
+                    </p>
+                    <p class="text-sm text-gray-500">
+                        AI understands context and performs complex multi-step tasks.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="py-20 bg-indigo-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Experience AI Browsing?</h2>
+            <p class="text-xl mb-12">Download BrowserGenie for your platform</p>
+            <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <a href="#" class="bg-white text-indigo-600 p-6 rounded-lg hover:shadow-2xl transition">
+                    <i class="fab fa-windows text-5xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Windows</h3>
+                    <p class="text-sm text-gray-600 mb-4">Windows 10/11</p>
+                    <span class="text-indigo-600 font-semibold">Download .exe</span>
+                </a>
+                <a href="#" class="bg-white text-indigo-600 p-6 rounded-lg hover:shadow-2xl transition">
+                    <i class="fab fa-apple text-5xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">macOS</h3>
+                    <p class="text-sm text-gray-600 mb-4">macOS 11+</p>
+                    <span class="text-indigo-600 font-semibold">Download .dmg</span>
+                </a>
+                <a href="#" class="bg-white text-indigo-600 p-6 rounded-lg hover:shadow-2xl transition">
+                    <i class="fab fa-linux text-5xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Linux</h3>
+                    <p class="text-sm text-gray-600 mb-4">Ubuntu/Debian</p>
+                    <span class="text-indigo-600 font-semibold">Download .AppImage</span>
+                </a>
+            </div>
+            <p class="mt-8 text-sm opacity-80">
+                Or try the Chrome extension while we build the full browser
+            </p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">About BrowserGenie</h2>
+            <p class="text-lg text-gray-600 mb-8">
+                BrowserGenie is a fork of <a href="https://github.com/browseros-ai/BrowserOS" class="text-indigo-600 hover:underline">BrowserOS</a>, 
+                an open-source Chromium-based browser with AI capabilities. We're grateful to the BrowserOS team for creating this amazing project.
+            </p>
+            <p class="text-lg text-gray-600 mb-8">
+                For the first time since Netscape pioneered the web in 1994, AI gives us the chance to completely reimagine the browser. 
+                We believe AI should empower you by automating tasks locally and securely—keeping your data private.
+            </p>
+            <div class="flex justify-center gap-6 mt-12">
+                <a href="https://github.com/browsergenie-ai/BrowserGenie" class="text-gray-600 hover:text-indigo-600 text-3xl">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://discord.gg/browsergenie" class="text-gray-600 hover:text-indigo-600 text-3xl">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="https://twitter.com/browsergenie_ai" class="text-gray-600 hover:text-indigo-600 text-3xl">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">🧞 BrowserGenie</h3>
+                    <p class="text-gray-400">
+                        AI-powered browser for the modern web
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Product</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#features" class="hover:text-white">Features</a></li>
+                        <li><a href="#download" class="hover:text-white">Download</a></li>
+                        <li><a href="#" class="hover:text-white">Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Community</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="https://github.com/browsergenie-ai/BrowserGenie" class="hover:text-white">GitHub</a></li>
+                        <li><a href="#" class="hover:text-white">Discord</a></li>
+                        <li><a href="#" class="hover:text-white">Contributing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">License (AGPL-3.0)</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Credits</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2025 BrowserGenie. Forked from <a href="https://github.com/browseros-ai/BrowserOS" class="text-indigo-400 hover:underline">BrowserOS</a>. Licensed under AGPL-3.0.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
