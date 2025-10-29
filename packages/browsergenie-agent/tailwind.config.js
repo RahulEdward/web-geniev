@@ -77,11 +77,11 @@ module.exports = {
         },
         "pulse-glow": {
           "0%, 100%": { 
-            boxShadow: "0 0 20px rgba(255, 165, 0, 0.3)",
+            boxShadow: "0 0 20px rgba(59, 130, 246, 0.3)",
             opacity: "0.7"
           },
           "50%": { 
-            boxShadow: "0 0 40px rgba(255, 165, 0, 0.6)",
+            boxShadow: "0 0 40px rgba(59, 130, 246, 0.6)",
             opacity: "1"
           },
           'paw-walk': {
@@ -193,12 +193,12 @@ module.exports = {
         },
         "brand-glow": {
           "0%, 100%": { 
-            boxShadow: "0 0 10px rgba(255, 165, 0, 0.3)",
-            borderColor: "hsl(19, 96%, 55%)"
+            boxShadow: "0 0 10px rgba(59, 130, 246, 0.3)",
+            borderColor: "hsl(217, 91%, 60%)"
           },
           "50%": { 
-            boxShadow: "0 0 20px rgba(255, 165, 0, 0.6)",
-            borderColor: "hsl(19, 96%, 65%)"
+            boxShadow: "0 0 20px rgba(59, 130, 246, 0.6)",
+            borderColor: "hsl(217, 91%, 70%)"
           },
         },
         "moving-light": {

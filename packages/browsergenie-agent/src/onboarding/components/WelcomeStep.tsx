@@ -23,12 +23,12 @@ export function WelcomeStep() {
       <div className="space-y-4">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight px-4">
           Welcome to{' '}
-          <span className="inline-block bg-gradient-to-r from-brand via-orange-500 to-brand bg-clip-text text-transparent">
+          <span className="inline-block bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 bg-clip-text text-transparent">
             BrowserGenie
           </span>
         </h1>
         <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto font-medium px-4">
-          The Open-Source Agentic Browser
+          The AI-Powered Agentic Browser
         </p>
         <p className="text-sm sm:text-base text-muted-foreground/80 max-w-xl mx-auto leading-relaxed px-4">
            BrowserGenie turns your words into actions. Privacy-first alternative to ChatGPT Atlas, Perplexity Comet and Dia!
@@ -36,11 +36,11 @@ export function WelcomeStep() {
       </div>
 
       {/* Feature highlights with enhanced cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto pt-6 px-4">
-        <div className="group flex flex-col items-center text-center space-y-3 p-6 rounded-2xl border-2 border-border/60 bg-card/80 hover:bg-card hover:border-brand/50 transition-all duration-300 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1">
-          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-brand/20 to-orange-500/20 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto pt-6 px-4">
+        <div className="group flex flex-col items-center text-center space-y-3 p-6 rounded-2xl border-2 border-border/60 bg-card/80 hover:bg-card hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1">
+          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500/20 to-blue-600/20 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
             <svg
-              className="w-7 h-7 text-brand"
+              className="w-7 h-7 text-blue-500"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -59,10 +59,10 @@ export function WelcomeStep() {
           </p>
         </div>
 
-        <div className="group flex flex-col items-center text-center space-y-3 p-6 rounded-2xl border-2 border-border/60 bg-card/80 hover:bg-card hover:border-brand/50 transition-all duration-300 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1">
-          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-brand/20 to-orange-500/20 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+        <div className="group flex flex-col items-center text-center space-y-3 p-6 rounded-2xl border-2 border-border/60 bg-card/80 hover:bg-card hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1">
+          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500/20 to-blue-600/20 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
             <svg
-              className="w-7 h-7 text-brand"
+              className="w-7 h-7 text-blue-500"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -78,28 +78,6 @@ export function WelcomeStep() {
           <h3 className="font-bold text-base">Privacy First</h3>
           <p className="text-sm text-muted-foreground leading-relaxed">
             Your data stays local and secure
-          </p>
-        </div>
-
-        <div className="group flex flex-col items-center text-center space-y-3 p-6 rounded-2xl border-2 border-border/60 bg-card/80 hover:bg-card hover:border-brand/50 transition-all duration-300 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1">
-          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-brand/20 to-orange-500/20 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
-            <svg
-              className="w-7 h-7 text-brand"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-              />
-            </svg>
-          </div>
-          <h3 className="font-bold text-base">Open Source</h3>
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            Built by the community, for everyone
           </p>
         </div>
       </div>

@@ -28,7 +28,7 @@ export function OnboardingLayout({ children }: OnboardingLayoutProps) {
       {/* Footer */}
       <div className="py-4 text-center text-sm text-muted-foreground">
         <p>
-          BrowserGenie &copy; {new Date().getFullYear()} - The Open-Source Agentic Browser
+          BrowserGenie &copy; {new Date().getFullYear()} - The AI-Powered Agentic Browser
         </p>
       </div>
     </div>

@@ -30,13 +30,13 @@ export function NavigationControls({
   }
 
   const baseButtonClasses =
-    'group flex items-center gap-2 px-8 py-3 backdrop-blur-md bg-orange-50/40 dark:bg-orange-950/40 border-2 border-orange-300/60 dark:border-orange-700/60 text-orange-600 dark:text-orange-400 font-bold rounded-lg transition-all duration-300 shadow-md shadow-orange-500/20 hover:bg-orange-100/50 dark:hover:bg-orange-900/50 hover:border-orange-400/70 dark:hover:border-orange-600/70 hover:shadow-lg hover:shadow-orange-500/30 hover:scale-105 active:scale-95 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none disabled:translate-y-0'
+    'group flex items-center gap-2 px-8 py-3 backdrop-blur-md bg-blue-50/40 dark:bg-blue-950/40 border-2 border-blue-300/60 dark:border-blue-700/60 text-blue-600 dark:text-blue-400 font-bold rounded-lg transition-all duration-300 shadow-md shadow-blue-500/20 hover:bg-blue-100/50 dark:hover:bg-blue-900/50 hover:border-blue-400/70 dark:hover:border-blue-600/70 hover:shadow-lg hover:shadow-blue-500/30 hover:scale-105 active:scale-95 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none disabled:translate-y-0'
 
   const skipButtonClasses =
     'px-8 py-3 backdrop-blur-md bg-muted/40 border-2 border-border/60 text-muted-foreground font-semibold rounded-lg transition-all duration-300 hover:bg-muted/60 hover:border-border hover:scale-105 active:scale-95'
 
   const primaryButtonClasses =
-    'group relative px-8 py-3 bg-gradient-to-r from-brand to-orange-500 hover:from-brand/90 hover:to-orange-500/90 text-white font-bold rounded-lg transition-all duration-300 shadow-lg shadow-brand/25 hover:shadow-xl hover:shadow-brand/40 hover:scale-105 active:scale-95 overflow-hidden flex items-center gap-2'
+    'group relative px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-bold rounded-lg transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105 active:scale-95 overflow-hidden flex items-center gap-2'
 
   return (
     <div className={`flex justify-between items-center ${className ?? 'pt-4'}`}>
