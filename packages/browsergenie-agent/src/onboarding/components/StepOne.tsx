@@ -41,29 +41,41 @@ export function StepOne() {
         </div>
 
         <div className="flex flex-col items-center gap-3">
-          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-brand/20 to-orange-500/20 border-2 border-brand/40 flex items-center justify-center shadow-xl p-4">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 border-2 border-blue-500/40 flex items-center justify-center shadow-xl p-4">
             <img
               src="/assets/product_logo_svg.svg"
               alt="BrowserGenie"
               className="w-full h-full object-contain"
             />
           </div>
-          <p className="text-sm font-semibold text-brand">BrowserGenie</p>
+          <p className="text-sm font-semibold text-blue-500">BrowserGenie</p>
         </div>
       </div>
 
       {/* What gets imported */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
         {[
-          { icon: '🔖', title: 'Bookmarks', desc: 'All your saved sites' },
-          { icon: '🕐', title: 'History', desc: 'Browsing timeline' },
-          { icon: '🔑', title: 'Passwords', desc: 'Saved credentials' }
+          {
+            icon: <svg className="w-10 h-10 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" /></svg>,
+            title: 'Bookmarks',
+            desc: 'All your saved sites'
+          },
+          {
+            icon: <svg className="w-10 h-10 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
+            title: 'History',
+            desc: 'Browsing timeline'
+          },
+          {
+            icon: <svg className="w-10 h-10 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" /></svg>,
+            title: 'Passwords',
+            desc: 'Saved credentials'
+          }
         ].map((item, index) => (
           <div
             key={item.title}
-            className="group bg-gradient-to-br from-card/80 to-background/60 backdrop-blur-sm border-2 border-border/60 rounded-2xl p-6 text-center hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 transition-all duration-300 hover:-translate-y-1 hover:scale-105 active:scale-95"
+            className="group bg-gradient-to-br from-card/80 to-background/60 backdrop-blur-sm border-2 border-border/60 rounded-2xl p-6 text-center hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 hover:-translate-y-1 hover:scale-105 active:scale-95"
           >
-            <div className="text-4xl mb-3">{item.icon}</div>
+            <div className="flex justify-center mb-3">{item.icon}</div>
             <h4 className="font-bold text-base mb-2">{item.title}</h4>
             <p className="text-sm text-muted-foreground">{item.desc}</p>
           </div>
@@ -71,7 +83,7 @@ export function StepOne() {
       </div>
 
       {/* CTA Section */}
-      <div className="flex flex-col items-center gap-5 bg-gradient-to-br from-orange-50/50 to-orange-100/30 dark:from-orange-950/20 dark:to-orange-900/10 border border-orange-200/50 dark:border-orange-800/30 rounded-2xl p-8">
+      <div className="flex flex-col items-center gap-5 bg-gradient-to-br from-blue-50/50 to-blue-100/30 dark:from-blue-950/20 dark:to-blue-900/10 border border-blue-200/50 dark:border-blue-800/30 rounded-2xl p-8">
         <div className="text-center space-y-2 max-w-xl">
           <h3 className="text-xl font-bold">Ready to Import Your Data?</h3>
           <p className="text-sm text-muted-foreground leading-relaxed">
@@ -81,7 +93,7 @@ export function StepOne() {
 
         <button
           onClick={handleOpenImportSettings}
-          className="group relative px-10 py-4 bg-gradient-to-r from-brand to-orange-500 hover:from-brand/90 hover:to-orange-500/90 text-white font-bold rounded-xl transition-all duration-300 shadow-lg shadow-brand/25 hover:shadow-xl hover:shadow-brand/40 hover:scale-105 active:scale-95 overflow-hidden"
+          className="group relative px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-bold rounded-xl transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105 active:scale-95 overflow-hidden"
         >
           <span className="relative z-10 flex items-center gap-3">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
